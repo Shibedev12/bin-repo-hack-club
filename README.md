@@ -5,5 +5,5 @@
 ### 2. A looping Armed... Message plays until the motion sensor reports that motion is detected.
 ### 3. The speaker blares for 5 seconds while the display says INTRUDER!!!
 ### Its That Easy! Just Plug It In And Go!
-[![Hakkun Giving me my alarm inspiration](https://github.com/Shibedev12/bin-repo-hack-club/blob/main/inspiration.png?raw=true)
-### Thanks Hakkun!
+![Hakkun Giving me my alarm inspiration](https://github.com/Shibedev12/bin-repo-hack-club/blob/main/inspiration.png?raw=true)
+### Thanks Hakkuun!
