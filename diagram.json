@@ -3,45 +3,37 @@
   "author": "The Bin - Hack Club",
   "editor": "wokwi",
   "parts": [
-    {
-      "type": "board-pi-pico-w",
-      "id": "pico",
-      "top": 0,
-      "left": 0,
-      "attrs": {}
-    },
+    { "type": "board-pi-pico-w", "id": "pico", "top": 0, "left": 0, "attrs": {} },
     {
       "type": "wokwi-pir-motion-sensor",
       "id": "wokwi-pir-motion-sensor-0",
-      "left": 118,
-      "top": 0
+      "top": -24.8,
+      "left": -208.98,
+      "attrs": {}
     },
-    {
-      "type": "wokwi-lcd1602",
-      "id": "wokwi-lcd1602-0",
-      "left": 0,
-      "top": 215
-    },
-    {
-      "type": "wokwi-buzzer",
-      "id": "wokwi-buzzer-0",
-      "left": 0,
-      "top": 430
-    }
+    { "type": "wokwi-lcd1602", "id": "wokwi-lcd1602-0", "top": 99.43, "left": 246.4, "attrs": {} },
+    { "type": "wokwi-buzzer", "id": "wokwi-buzzer-0", "top": -122.4, "left": -36.6, "attrs": {} }
   ],
   "connections": [
-    [
-      "pico:GP0",
-      "$serialMonitor:RX",
-      "",
-      []
-    ],
-    [
-      "pico:GP1",
-      "$serialMonitor:TX",
-      "",
-      []
-    ]
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "wokwi-pir-motion-sensor-0:GND", "pico:GND.1", "black", [ "v0" ] ],
+    [ "wokwi-pir-motion-sensor-0:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "wokwi-buzzer-0:1", "pico:GND.2", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:VSS", "pico:GND.7", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:VDD", "pico:VBUS", "green", [ "v0" ] ],
+    [ "pot1:SIG", "wokwi-lcd1602-0:V0", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:A", "pico:VSYS", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:K", "pico:GND.8", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:RS", "pico:GP12", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:RW", "pico:GND.3", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:E", "pico:GP11", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:D4", "pico:GP10", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:D5", "pico:GP9", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:D6", "pico:GP8", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:D7", "pico:GP7", "green", [ "v0" ] ],
+    [ "wokwi-pir-motion-sensor-0:OUT", "pico:GP2", "green", [ "v0" ] ],
+    [ "wokwi-buzzer-0:2", "pico:GP3", "green", [ "v0" ] ]
   ],
   "dependencies": {}
 }
