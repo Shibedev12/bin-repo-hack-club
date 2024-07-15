@@ -1,12 +1,11 @@
 #include <LiquidCrystal.h>
-
-// Initialize the LCD with the numbers of the interface pins
+// Tells the pi whats up with the lcd.
 LiquidCrystal lcd(12, 11, 10, 9, 8, 7);
 
-// PIR sensor pin
+// motion sensor pin
 const int pirPin = 2;
 
-// Buzzer pin
+// speaker pin
 const int buzzerPin = 3;
 
 // Variable to store PIR state
@@ -28,14 +27,22 @@ void setup() {
   // Attach interrupt to PIR sensor pin
   attachInterrupt(digitalPinToInterrupt(pirPin), motionDetected, RISING);
 
-  // Clear the LCD and display the monitoring message
+  // clear screen to say the waiting message
   lcd.clear();
   lcd.print("Armed...");
 }
 
 void loop() {
-  // Relax little loop!
-}
+// Animation for "Armed..."
+  lcd.clear();
+  lcd.print("Armed.");
+  delay(300);
+  lcd.clear();
+  lcd.print("Armed..");
+  delay(300);
+  lcd.clear();
+  lcd.print("Armed...");
+  delay(300);}
 
 void motionDetected() {
   // Updates faster than Windows 10
